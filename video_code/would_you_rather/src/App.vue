@@ -1,14 +1,19 @@
 <script setup>
+//import child file
 import WouldYouRather from './components/WouldYouRather.vue'
 
+//imports ref object from vue
 import {ref} from 'vue'
 
+//define variables
 const wyrQuestion = ref('Would you rather have homemade pizza or homemade pasta?')
 const wyrAnswer1 = ref('Homemade pizza')
 const wyrAnswer2 = ref('Homemade pasta')
 
+//user input
 const userSelection = ref('')
 
+//process user input for display
 function updateUserSelection(userChoice){
     userSelection.value = `I see, you would rather have ${userChoice}.`
 }
@@ -19,7 +24,7 @@ function updateUserSelection(userChoice){
 <div id="app-components">
 
 <h1>Would You Rather?</h1>
-
+<!--binds information in parent to what is expect to be recieved in child-->
     <WouldYouRather 
     v-bind:question="wyrQuestion"
     v-bind:answer1="wyrAnswer1"
@@ -31,7 +36,7 @@ function updateUserSelection(userChoice){
 </template>
 
 
-
+<!--css styling-->
 <style scoped>
 p{
     font-family: Arial, Helvetica, sans-serif;
